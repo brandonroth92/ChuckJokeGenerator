@@ -3,9 +3,10 @@ var jokeQuote = '';
 
 function callQuote() {
   
-  $.getJSON("http://api.icndb.com/jokes/random", function(json) {
+  $.getJSON("http://api.icndb.com/jokes/random?callback=?", function(json){
+    
     jokeQuote = (json.value.joke);
-  
+    
     $(".chucktainer").animate({
       opacity: 0
       }, 500,
@@ -16,7 +17,9 @@ function callQuote() {
       
     $("#quote").html(JSON.stringify(jokeQuote));
      });
-    
+  });
+}
+  
 //    var selectBg = Math.floor(Math.random() * bgColorArray.length);
 //    $("html body").animate({
 //        backgroundColor: bgColorArray[selectBg],
@@ -25,8 +28,6 @@ function callQuote() {
 //    $(".button").animate({
 //        backgroundColor: bgColorArray[selectBg]
 //      }, 1000);
-  });
-}   
 
 $(document).ready(function() {
   callQuote();
