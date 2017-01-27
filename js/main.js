@@ -22,8 +22,8 @@ var jokeQuote = '';
 
 function callQuote() {
   $.ajax({
-    crossOrigin: true;
-    url: "http://api.icndb.com/jokes/random?callback=?",
+    crossOrigin: true,
+    url: "http://api.icndb.com/jokes/random",
     success: function(json) {
       jokeQuote = (json.value.joke);
     
@@ -37,6 +37,7 @@ function callQuote() {
       
     $("#quote").html(JSON.stringify(jokeQuote));
      });
+    }
   });
 }
   
