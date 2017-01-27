@@ -1,25 +1,6 @@
 var bgColorArray = ["#16a085", "#27ae60", "#2c3e50", "#f39c12", "#e74c3c", "#9b59b6", "#FB6964", "#342224", "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 var jokeQuote = '';
 
-//function callQuote() {
-//  
-//  $.getJSON("http://api.icndb.com/jokes/random?callback=?", function(json){
-//    
-//    jokeQuote = (json.value.joke);
-//    
-//    $(".chucktainer").animate({
-//      opacity: 0
-//      }, 500,
-//    function() {
-//      $(".chucktainer").animate({
-//        opacity: 1
-//        }, 500);
-//      
-//    $("#quote").html(JSON.stringify(jokeQuote));
-//     });
-//  });
-//}
-
 function callQuote() {
   $.ajax({
     type: "GET",
@@ -41,10 +22,7 @@ function callQuote() {
     }
   });
 }
-  
 
-
-  
 //    var selectBg = Math.floor(Math.random() * bgColorArray.length);
 //    $("html body").animate({
 //        backgroundColor: bgColorArray[selectBg],
