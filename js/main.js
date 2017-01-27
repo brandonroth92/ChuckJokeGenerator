@@ -22,8 +22,9 @@ var jokeQuote = '';
 
 function callQuote() {
   $.ajax({
-    crossOrigin: true,
-    url: "http://api.icndb.com/jokes/random",
+    type: "GET",
+    url: "https://api.icndb.com/jokes/random",
+    dataType: "jsonp",
     success: function(json) {
       jokeQuote = (json.value.joke);
     
